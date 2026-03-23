@@ -1,0 +1,166 @@
+:root {
+  color-scheme: light;
+  --bg: #f3f0e8;
+  --panel: #fffaf0;
+  --border: #2b2b2b;
+  --grid: #ddd3c1;
+  --snake: #2f7d32;
+  --snake-head: #184d1a;
+  --food: #d94841;
+  --text: #1b1b1b;
+  --muted: #6b665d;
+  --button: #ede4d3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.panel {
+  width: min(100%, 560px);
+  background: var(--panel);
+  border: 2px solid var(--border);
+  padding: 20px;
+  box-shadow: 6px 6px 0 #d7ccb7;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.label {
+  margin: 0 0 4px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.value {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.board-wrap {
+  border: 2px solid var(--border);
+  background: white;
+}
+
+.board {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: white;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+}
+
+.cell {
+  border: 0;
+}
+
+.cell.snake {
+  background: var(--snake);
+}
+
+.cell.head {
+  background: var(--snake-head);
+}
+
+.cell.food {
+  background: var(--food);
+  border-radius: 999px;
+  margin: 16%;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+button {
+  appearance: none;
+  border: 2px solid var(--border);
+  background: var(--button);
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+button:active {
+  transform: translate(1px, 1px);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(56px, 72px));
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.control.up {
+  grid-column: 2;
+}
+
+.control.left {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.control.down {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.control.right {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.help {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.help p {
+  margin: 6px 0 0;
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 12px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+  }
+}

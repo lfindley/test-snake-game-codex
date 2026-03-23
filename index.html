@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classic Snake</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel">
+        <header class="hud">
+          <div>
+            <p class="label">Score</p>
+            <p class="value" id="score">0</p>
+          </div>
+          <div>
+            <p class="label">Status</p>
+            <p class="value" id="status">Ready</p>
+          </div>
+        </header>
+
+        <div class="board-wrap">
+          <div
+            id="board"
+            class="board"
+            role="grid"
+            aria-label="Snake board"
+          ></div>
+        </div>
+
+        <div class="actions">
+          <button id="start-button" type="button">Start</button>
+          <button id="pause-button" type="button">Pause</button>
+          <button id="restart-button" type="button">Restart</button>
+        </div>
+
+        <div class="controls" aria-label="Touch controls">
+          <button class="control up" data-direction="up" type="button">↑</button>
+          <button class="control left" data-direction="left" type="button">←</button>
+          <button class="control down" data-direction="down" type="button">↓</button>
+          <button class="control right" data-direction="right" type="button">→</button>
+        </div>
+
+        <section class="help">
+          <p>Move with arrow keys or WASD.</p>
+          <p>Press space to pause or resume. Restart after game over.</p>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
